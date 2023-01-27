@@ -1,4 +1,5 @@
 # Home
 
-## Welcome on my documentation !
+## Welcome on my documentation
+
 I'm glad to see you here !
