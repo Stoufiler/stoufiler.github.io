@@ -18,4 +18,6 @@ jobs:
           key: ${{ github.ref }}
           path: .cache
       - run: pip install mkdocs-material
+      - run: pip install pre-commit
+      - run: pre-commit run --all-files
       - run: mkdocs gh-deploy --force
