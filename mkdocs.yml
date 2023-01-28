@@ -1,5 +1,12 @@
 site_name: StephanGR's Documentation
 
+nav:
+  - Home: index.md
+  - Proxmox:
+    - proxmox/index.md
+    - Installation: proxmox/installation/index.md
+    - Configuration: proxmox/configuration/index.md
+
 theme:
   name: material
   font:
@@ -44,3 +51,7 @@ extra:
 plugins:
   - search:
       lang: en
+
+markdown_extensions:
+  - pymdownx.details
+  - attr_list
