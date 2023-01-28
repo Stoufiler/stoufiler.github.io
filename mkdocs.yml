@@ -6,6 +6,9 @@ nav:
     - proxmox/index.md
     - Installation: proxmox/installation/index.md
     - Configuration: proxmox/configuration/index.md
+  - Docker:
+    - docker/index.md
+    - Wireguard Frigate and NAT: docker/wireguard_frigate_nat/index.md
 
 theme:
   name: material
@@ -23,6 +26,7 @@ theme:
     - navigation.top
     - search.suggest
     - search.highlight
+    - content.code.copy
 
   palette:
     # Palette toggle for automatic mode
@@ -53,5 +57,9 @@ plugins:
       lang: en
 
 markdown_extensions:
-  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
   - attr_list
