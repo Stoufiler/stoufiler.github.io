@@ -9,6 +9,9 @@ nav:
   - Docker:
     - docker/index.md
     - Wireguard Frigate and NAT: docker/wireguard_frigate_nat/index.md
+  - ISP:
+    - isp/index.md
+    - How to use UDM PRO SE instead of Orange LIVEBOX ?: isp/bypass-livebox/index.md
 
 theme:
   name: material
