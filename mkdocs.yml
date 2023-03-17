@@ -11,7 +11,7 @@ nav:
     - Wireguard Frigate and NAT: docker/wireguard_frigate_nat/index.md
   - ISP:
     - isp/index.md
-    - How to use UDM PRO SE instead of Orange LIVEBOX ?: isp/bypass-livebox/index.md
+    - How to replace Orange LIVEBOX by UDM PRO SE ?: isp/bypass-livebox/index.md
 
 theme:
   name: material
@@ -64,5 +64,8 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
   - pymdownx.superfences
   - attr_list
