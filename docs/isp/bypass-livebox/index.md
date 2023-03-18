@@ -38,8 +38,8 @@ On the UDM PRO SE :
 
 <figure markdown>
 [![Step 2](screenshots/port-emplacement.png){: style="width:400px"}](screenshots/port-emplacement.png)
-</figure
->
+</figure>
+
 ## STEP 3 : Allow your computer to access GPON configuration
 
 !!! info inline end
@@ -245,3 +245,4 @@ You should optain something like this :
 !!! Warning
     If you have a private IP like `172.16.152.14` there is a misconfiguration.
     Check all steps and try again
+    
