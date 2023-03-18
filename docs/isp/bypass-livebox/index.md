@@ -245,4 +245,3 @@ You should optain something like this :
 !!! Warning
     If you have a private IP like `172.16.152.14` there is a misconfiguration.
     Check all steps and try again
-    
