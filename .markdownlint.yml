@@ -1,3 +1,8 @@
 MD046:
   # Block style
   style: "fenced"
+
+MD033:
+  allowed_elements:
+    - "figure"
+    - "iframe"
