@@ -187,7 +187,7 @@ flash set OMCC_VER 128
 | OltVendorID  | OMCC_VER  |
 |:-----------: |:--------: |
 | ALCL         | 128       |
-| HWTC         | 135       |
+| HWTC         | 136       |
 
 !!! success "GPON Configuration is done"
 
