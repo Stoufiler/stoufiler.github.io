@@ -111,54 +111,67 @@ Password: leolabs_7
 
 You are now connected into the GPON
 
-## STEP 7 : Get informations from Livebox using and Open Source tool
+## STEP 7 : Get informations from Livebox
 
-- Download this tool : [LiveboxMonitor](https://github.com/p-dor/LiveboxMonitor)
+I've made a little application written in
+GO to fetch directly informations from Livebox
+
+- Download the app : [GOBOX](https://github.com/StephanGR/gobox)
 - Execute it
 - Fill IP, Username and Password
-- Wait at least 1 minute for fetching all data
-- Click on tab `Stats/Info Livebox`
-- Click on `Export...` button
 
-<figure markdown>
-[![Step 7](screenshots/LiveboxMonitor.png){: style="width:400px"}](screenshots/LiveboxMonitor.png)
-</figure>
+You should have something like that :
 
-- Open exported file and follow STEP 8
+```bash
+> ./gobox
+Livebox IP : 192.168.1.1
+Username : admin
+Password :
+✅ Successfully connected to Livebox ! ✅
+
+===========LEOX GPON COMMAND=============
+flash set GPON_PLOAM_PASSWD DEFAULT012
+flash set OMCI_TM_OPT 0
+flash set OMCI_OLT_MODE 1
+flash set GPON_SN XXXXXXXXXXXX
+flash set PON_VENDOR_ID SMBS
+flash set HW_HWVER XXXXXXXXXXXX
+flash set OMCI_SW_VER1 XXXXXXXXXXXXX
+flash set OMCI_SW_VER2 XXXXXXXXXXXXX
+=========================================
+
+==========UDM PRO SE SETTINGS============
+NAME              : LEOX GPON
+VLAN ID           : 832
+MAC Address Clone : XX:XX:XX:XX:XX:XX
+DHCP OPTION 60    : sagem
+DHCP OPTION 77    : FSVDSL_livebox.Internet.softathome.Livebox5
+DHCP OPTION 90    : 00:00:00:00:00:00:00:00:00:00:00:1a:09:00:00:05:58:01:03:41:01:0D:66:74:69:2F:67:66:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX:XX
+DHCP CoS          : 6
+=========================================
+```
 
 ## STEP 8 : Configure the GPON
 
 - Go back to GPON configuration
-- Write following lines according to your data
+- Copy / Paste all `LEOX GPON COMMAND` fetched on STEP 7
+- Verify GPON state
 
 ```bash
-flash set GPON_PLOAM_PASSWD DEFAULT012
-flash set OMCI_TM_OPT 0
-flash set OMCI_OLT_MODE 1
-flash set GPON_SN SMBSXXXXX             # Numéro de série
-flash set PON_VENDOR_ID SMBS            # ID Vendeur
-flash set HW_HWVER SMBSXXXXXXX          # Version Matériel
-flash set OMCI_SW_VER1 SAHEXXXX         # Version 0 Logiciel ONT
-flash set OMCI_SW_VER2 SAHEXXXX         # Version 1 Logiciel ONT
-```
-
-- OK perfect, verify GPON is available
-
-```bash
-diag gpon get onu-state
+> diag gpon get onu-state
 # IT SHOULD RETURN 05
 gpon get onu-state
 ONU state: Operation State(O5)
 ```
 
 !!! info
-    - If you have `01` for `Operation State` please check your cable
-    - If you have `05` for `Operation State` it seems to be OK we can continue
+    - If you have `Operation State(01)` please check your cable
+    - If you have `Operation State(05)` it seems to be OK we can continue
 
 Now it's time to find the `OltVendorId`
 
 ```bash
-omcicli mib get 131
+> omcicli mib get 131
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 OltG
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -202,25 +215,7 @@ flash set OMCC_VER 128
   [![Step 9.1](screenshots/9.1.png){: style="width:400px"}](screenshots/9.1.png)
 </figure>
 
-!!! warning "Fill everything I mentionned"
-
-- Give a name : `LEOX GPON`
-- Set expected ISP Speeds : `Download 300Mbps | Upload 300Mbps`
-- Enable and set VLAN ID : `832`
-- Enable and set MAC Address Clone : `XX.XX.XX.XX.XX.XX` _# LIVEBOX MAC ADDRESS_
-- DHCP Client Options :
-  - 60 : `sagem`
-  - 77 : `FSVDSL_livebox.Internet.softathome.Livebox5` _# If
-you have Livebox 3 replace `5` by `3`_
-  - 90 : Calculate it by using this
-  [jsfiddle](https://jsfiddle.net/kgersen/3mnsc6wy/){target=_blank} ;
-  Let `Salt` and `Byte` to default
-  <iframe width="100%" height="300"
-  src="//jsfiddle.net/kgersen/3mnsc6wy/embedded/result/dark/"></iframe>
-
-- DHCP CoS : `6`
-- IPv4 Connection : `DHCPv4`
-- IPv6 Connection : `Disabled`
+!!! warning "Fill everything returned by STEP 7"
 
 Apply your changes
 
