@@ -6,12 +6,12 @@
 - 1 [LEOX GPON STICK LXT-010S-H](https://www.leolabs.pl/lxt-010s-h.html){target=_blank}
 - 1 [SC-APC / SC-UPC Cable](https://amzn.to/3lh8xCA){target=_blank}
 
-You can order the GPON by [sending a mail](mailto:sales@leolabs.pl), or on
-[Contact page](https://www.leolabs.pl/contact.html){target=_blank},
- Price is 70 USD netto/piece (for purchase as an individual, there is +23% VAT)
-
-- delivery. It makes arount 90 EUR (for individual), depends on the USD course
-   and delivery destination.
+!!! info
+    You can order the GPON by [sending a mail](mailto:sales@leolabs.pl), or on
+    [Contact page](https://www.leolabs.pl/contact.html){target=_blank},
+    Price is 70 USD netto/piece (for purchase as an individual, there is
+    +23% VAT) delivery. It makes arount 90 EUR (for individual), depends on
+    the USD course and delivery destination.
 
 ## STEP 1 : Create configuration network
 
@@ -88,7 +88,7 @@ On the UDM PRO SE :
 Once you upgrade to latest version, you should verify that
 
 - Go to [http://192.168.100.1/status.asp](http://192.168.100.1/status.asp)
-- Firmware version should be : `V3.3.4L4rc4`
+- Firmware version should be : `V3.3.4L4rc5`
 
 <figure markdown>
 [![Step 5](screenshots/check-version.png){: style="width:400px"}](screenshots/check-version.png)
