@@ -6,8 +6,12 @@
 - 1 [LEOX GPON STICK LXT-010S-H](https://www.leolabs.pl/lxt-010s-h.html){target=_blank}
 - 1 [SC-APC / SC-UPC Cable](https://amzn.to/3lh8xCA){target=_blank}
 
-You can order the GPON on [xbest.pl](http://xbest.pl/index.php?p4878,sfp-gpon-stick-leox-lxt-010s-h-1-25-2-5g-sm-sc-20km-tx1310-rx1490-ddm-class-b){target=_blank},
- it costs me around 90€ with delivery
+You can order the GPON by [sending a mail](mailto:sales@leolabs.pl), or on
+[Contact page](https://www.leolabs.pl/contact.html){target=_blank},
+ Price is 70 USD netto/piece (for purchase as an individual, there is +23% VAT)
+
+- delivery. It makes arount 90 EUR (for individual), depends on the USD course
+   and delivery destination.
 
 ## STEP 1 : Create configuration network
 
@@ -66,7 +70,7 @@ On the UDM PRO SE :
   - **Username :** `leox`
   - **Password :** `leolabs_7`
 
-- [Download the firmware](firmware/V3.3.4L4rc4)
+- [Download the firmware](firmware/V3.3.4L4rc5)
 - Select the firmware on your laptop
 - Click on `Upgrade` button
 - Confirm you want to upgrade
@@ -74,6 +78,10 @@ On the UDM PRO SE :
 <figure markdown>
 [![Step 4](screenshots/upgrade-gpon.png){: style="width:400px"}](screenshots/upgrade-gpon.png)
 </figure>
+
+!!! info inline end
+    Today, there is no changelog page on Leolabs website,
+    but they had in mind to prepare one.
 
 ## STEP 5 : Verify that version is latest one
 
