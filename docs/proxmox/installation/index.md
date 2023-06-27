@@ -4,7 +4,7 @@
 [OVHcloud website](https://www.ovhcloud.com/fr/bare-metal/).
 It can be also an eco one
 
-* Install ProxMox using the OVHcloud manager
+* Install Proxmox using the OVHcloud manager
 or the [API](https://api.ovh.com/console/#/dedicated/server)
 
 [![Step 1](1.png){: style="width:400px"}](1.png)
