@@ -28,6 +28,16 @@ You should have something like that :
 
 With this configuration, when you create a VM simply choose `vmbr1` network.
 
+## NAT port forwarding
+
+To add port forwarding you can simply update the `/etc/network/interfaces` file
+and add this line in `iface vmbr1 inet static` update the line according to
+your need
+
+```text
+post-up iptables -t nat -A PREROUTING -i vmbr0 -p tcp --dport 3389 -j DNAT --to 10.0.0.2:3389
+post-down iptables -t nat -D PREROUTING -i vmbr0 -p tcp --dport 3389 -j DNAT --to 10.0.0.2:3389
+
 ## Add DHCP and DNS server to your Proxmox Virtual Environment
 
 To do that, we will use dnsmasq which is a simple and lightweight app
