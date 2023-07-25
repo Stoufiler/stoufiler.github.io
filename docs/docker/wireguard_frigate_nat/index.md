@@ -47,7 +47,7 @@ Here are my server config file :
 ```title="/etc/wireguard/wg0.conf"
 [Interface]
 Address = 10.83.153.1/24
-MTU = 1420
+MTU = 1480
 SaveConfig = true
 ListenPort = 51820
 PrivateKey = XXX
@@ -63,10 +63,14 @@ iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 # My Distant Server
 [Peer]
 PublicKey = XXX
-PresharedKey = XXX
-AllowedIPs = 10.83.153.3/32
+AllowedIPs = 192.168.1.201/32, 10.83.153.3/32
 PersistentKeepalive = 25
 ```
+
+!!! warning
+
+    Before updating your wireguard configuration ensure that server is stopped
+    `wg-quick down wg0`
 
 ### Site B
 
@@ -128,22 +132,20 @@ Here is my wireguard config file :
 [Interface]
 PrivateKey = XXX
 Address = 10.83.153.3/24
-DNS = 1.1.1.1, 1.0.0.1
-MTU = 1384
+MTU = 1480
 
 PostUp = iptables -t nat -A PREROUTING -p tcp --dport 554 -j DNAT \
---to-destination 192.168.1.64:554
+--to-destination 192.168.1.201:554
 PostUp = iptables -t nat -A POSTROUTING -j MASQUERADE
 
 PostDown = iptables -t nat -D PREROUTING -p tcp --dport 554 -j DNAT \
---to-destination 192.168.1.64:554
+--to-destination 192.168.1.201:554
 PostDown = iptables -t nat -D POSTROUTING -j MASQUERADE
 
 [Peer]
 PublicKey = XXX
-PresharedKey = XXX
-Endpoint = IP or DNS:PORT
-AllowedIPs = 192.168.1.64/32, 10.83.153.1/32
+Endpoint = IP:PORT or DNS:PORT
+AllowedIPs = 192.168.1.201/32, 10.83.153.1/32
 PersistentKeepalive = 25
 ```
 
