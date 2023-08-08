@@ -15,7 +15,9 @@
 
 !!! warning
     Be sure to take an SC-APC / SC-UPC Cable (Green / Blue).
+
     SC-UPC (Blue) will be plugged into the GPON
+
     SC-APC (Green) will be plugged into your socket in your house/appartment
 
 ## STEP 1 : Create configuration network
