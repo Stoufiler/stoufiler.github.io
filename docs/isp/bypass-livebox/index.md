@@ -13,7 +13,7 @@
     +23% VAT) delivery. It makes arount 90 EUR (for individual), depends on
     the USD course and delivery destination.
 
-!!! warn
+!!! warning
     Be sure to take an SC-APC / SC-UPC Cable (Green / Blue).
     SC-UPC (Blue) will be plugged into the GPON
     SC-APC (Green) will be plugged into your socket in your house/appartment
