@@ -1,55 +1,54 @@
 site_name: My Documentation
 site_url: https://stephangr.github.io/
 
-nav:
-  - Home: index.md
-  - Proxmox:
-    - proxmox/index.md
-    - Installation: proxmox/installation/index.md
-    - Configuration: proxmox/configuration/index.md
-  - Docker:
-    - docker/index.md
-    - Wireguard Frigate and NAT: docker/wireguard_frigate_nat/index.md
-  - ISP:
-    - isp/index.md
-    - How to replace Orange LIVEBOX by UDM PRO SE ?: isp/bypass-livebox/index.md
+copyright: "Written with love by StephanGR"
+
+repo_name: StephanGR/stephangr.github.io
+repo_url: https://github.com/stephangr/stephangr.github.io
+
 
 theme:
   name: material
-  font:
-    text: Roboto
+  include_search_page: false
+  search_index_only: true
   features:
-    - navigation.footer
     - navigation.tabs
-    - navigation.sections
-    - navigation.expand
-    - navigation.path
-    - navigation.tracking
-    - toc.follow
-    - toc.integrate
     - navigation.top
+    - navigation.indexes
+    - navigation.tracking
+    - navigation.sections
     - search.suggest
     - search.highlight
+    - search.share
     - content.code.copy
+    - content.action.edit
+    - content.action.view
+    - navigation.footer
+    - navigation.expand
+    - navigation.path
+    - toc.follow
+    - toc.integrate
 
   palette:
-    # Palette toggle for automatic mode
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Switch to light mode
-    # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: orange
+      accent: amber
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
+
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: orange
+      accent: amber
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+  font:
+    text: Rubik
+    code: Rubik Mono
 
 extra:
   social:
@@ -58,7 +57,22 @@ extra:
 
 plugins:
   - search:
-      lang: en
+      lang: 'en'
+  - awesome-pages
+  - meta-descriptions
+  - external-markdown
+  - minify:
+      minify_html: true
+      htmlmin_opts:
+        remove_comments: true
+  - ezlinks
+  - progress
+  - git-revision-date-localized:
+      type: timeago
+      enable_creation_date: true
+  - social
+  - git-authors:
+      sort_authors_by: contribution
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -72,4 +86,24 @@ markdown_extensions:
   - attr_list
   - md_in_html
 
-repo_url: https://github.com/stephangr/stephangr.github.io
+
+
+nav:
+  - Home: index.md
+  - Infrastructure:
+    - proxmox/index.md
+    - Proxmox:
+      - OVHcloud:
+        - Installation: proxmox/ovhcloud/installation/index.md
+        - Configuration: proxmox/ovhcloud/configuration/index.md
+      - Personal:
+        - Presentation: proxmox/personal/presentation.md
+        - Installation: proxmox/personal/installation/index.md
+        - Configuration:
+          - iGPU passthrough: proxmox/personal/configuration/iGPU passthrough.md
+  - Docker:
+    - docker/index.md
+    - Wireguard Frigate and NAT: docker/wireguard_frigate_nat/index.md
+  - ISP:
+    - isp/index.md
+    - How to replace Orange LIVEBOX by UDM PRO SE ?: isp/bypass-livebox/index.md
