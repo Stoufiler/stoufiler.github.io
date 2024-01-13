@@ -17,6 +17,8 @@ theme:
     - navigation.indexes
     - navigation.tracking
     - navigation.sections
+    - navigation.instant
+    - navigation.instant.progress
     - search.suggest
     - search.highlight
     - search.share
@@ -101,7 +103,7 @@ nav:
           - iGPU passthrough: proxmox/personal/configuration/iGPU passthrough.md
   - Docker:
     - docker/index.md
-    - Wireguard Frigate and NAT: docker/wireguard_frigate_nat/index.md
+    - Stream distant camera using Go2RTC and Wireguard: docker/wireguard_go2rtc_nat/index.md
   - ISP:
     - isp/index.md
     - How to replace Orange LIVEBOX by UDM PRO SE ?: isp/bypass-livebox/index.md
