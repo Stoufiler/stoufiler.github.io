@@ -1,11 +1,10 @@
 site_name: My Documentation
-site_url: https://stephangr.github.io/
+site_url: https://stoufiler.github.io/
 
 copyright: "Written with love by StephanGR"
 
-repo_name: StephanGR/stephangr.github.io
-repo_url: https://github.com/stephangr/stephangr.github.io
-
+repo_name: Stoufiler/stoufiler.github.io
+repo_url: https://github.com/Stoufiler/stoufiler.github.io
 
 theme:
   name: material
